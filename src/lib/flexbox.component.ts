@@ -74,6 +74,7 @@ export class AmFlexboxComponent extends Iwe7BaseComponent {
     super(injector, "");
     Object.assign(this, this._default);
     this.setStyleInputs([
+      "flex",
       "direction",
       "wrap",
       "justify",

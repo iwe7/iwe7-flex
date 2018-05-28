@@ -4,8 +4,7 @@ flex,
 [amFlex],
 [iwe7Flex],
 [flex] {
-  display: flex;
-  overflow: hidden;
+  display: var(--flex);
   align-items: var(--align);
   align-content: var(--alignContent);
   justify-content: var(--justify);
