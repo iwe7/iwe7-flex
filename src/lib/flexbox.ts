@@ -63,7 +63,7 @@ export class AmFlexInputsDefault implements AmFlexInputs {
   selector: "iwe7-flex,am-flex,flex,[iwe7Flex],[amFlex],[flex]",
   providers: [Iwe7IcssService]
 })
-export class AmFlexboxComponent extends Iwe7BaseComponent {
+export class AmFlexboxDirective extends Iwe7BaseComponent {
   @Input() flex: string;
   @Input() direction: string;
   @Input() wrap: string;
