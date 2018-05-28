@@ -18,8 +18,10 @@ import { Iwe7FlexBoxModule } from 'iwe7-flex';
 
 ```scss
 am-flex,
+iwe7-flex,
 flex,
 [amFlex],
+[iwe7Flex],
 [flex] {
   display: flex;
   overflow: hidden;
@@ -30,7 +32,9 @@ flex,
   flex-wrap: var(--wrap);
   am-flex-item,
   flex-item,
+  iwe7-flex-item,
   [amFlexItem],
+  [iwe7FlexItem],
   [flexItem] {
     box-sizing: border-box;
     align-self: var(--self);
