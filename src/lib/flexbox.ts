@@ -13,6 +13,7 @@ import { Iwe7BaseComponent } from "iwe7-base";
 import { from } from "rxjs";
 import { filter, map, tap } from "rxjs/operators";
 import { Iwe7IcssService } from "iwe7-icss";
+
 export type AmFlexType = "flex" | "inline-flex";
 export type AmFlexDirectionType =
   | "row"
@@ -47,6 +48,7 @@ export interface AmFlexInputs {
   align: AmFlexAlignType;
   alignContent: AmFlexAlignContentType;
 }
+
 @Injectable({
   providedIn: "root"
 })
@@ -59,11 +61,18 @@ export class AmFlexInputsDefault implements AmFlexInputs {
   alignContent: AmFlexAlignContentType = "stretch";
 }
 
+@Component({
+  selector: "iwe7-flex,am-flex,flex",
+  template: `<ng-content></ng-content>`,
+  styleUrls: ["./flexbox.scss"],
+  providers: [Iwe7IcssService],
+  encapsulation: ViewEncapsulation.None
+})
 @Directive({
-  selector: "iwe7-flex,am-flex,flex,[iwe7Flex],[amFlex],[flex]",
+  selector: "[iwe7Flex],[amFlex],[flex]",
   providers: [Iwe7IcssService]
 })
-export class AmFlexboxDirective extends Iwe7BaseComponent {
+export class AmFlexbox extends Iwe7BaseComponent {
   @Input() flex: string;
   @Input() direction: string;
   @Input() wrap: string;
