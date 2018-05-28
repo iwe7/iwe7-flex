@@ -1,10 +1,10 @@
-`step1` install
+## `step1` install
 
 ```sh
 yarn add iwe7-flex
 ```
 
-`step2` imports module
+## `step2` imports module
 
 ```ts
 import { Iwe7FlexBoxModule } from 'iwe7-flex';
@@ -14,7 +14,7 @@ import { Iwe7FlexBoxModule } from 'iwe7-flex';
 })
 ```
 
-`step3` add scss style
+## `step3` add scss style
 
 ```scss
 am-flex,
@@ -48,7 +48,7 @@ flex,
 }
 ```
 
-`step4`: use
+## `step4`: use
 
 ```html
 <flex>
@@ -56,8 +56,9 @@ flex,
 </flex>
 ```
 
-`docs`
-`flex docs`
+## `docs`
+
+* `flex docs`
 
 ```ts
 @Input() flex: string;
@@ -68,7 +69,7 @@ flex,
 @Input() alignContent: string;
 ```
 
-`flex-item docs`
+* `flex-item docs`
 
 ```ts
 @Input() order: number;
