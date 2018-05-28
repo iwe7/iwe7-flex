@@ -48,9 +48,13 @@ export class AmFlexboxItem extends Iwe7BaseDirective {
   @Input() shrink: number;
   @Input() basis: string;
   @Input() self: AmFlexItemSelf;
+
+  get flex() {
+    return `${this.grow} ${this.shrink} ${this.basis}`;
+  }
   constructor(injector: Injector, public _default: AmFlexboxItemInputsDefault) {
     super(injector, "");
     Object.assign(this, this._default);
-    this.setStyleInputs(["order", "grow", "shrink", "basis", "self"]);
+    this.setStyleInputs(["order", "flex", "self"]);
   }
 }
