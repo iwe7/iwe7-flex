@@ -4,6 +4,7 @@ flex,
 [amFlex],
 [iwe7Flex],
 [flex] {
+  position: relative;
   display: var(--flex);
   align-items: var(--align);
   align-content: var(--alignContent);
@@ -16,6 +17,7 @@ flex,
   [amFlexItem],
   [iwe7FlexItem],
   [flexItem] {
+    position: relative;
     box-sizing: border-box;
     align-self: var(--self);
     flex: var(--flex);

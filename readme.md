@@ -1,46 +1,22 @@
-## `step1` install
+flex
 
-```sh
-yarn add iwe7-flex
-```
+| inputs       | 说明              |
+|--------------|-----------------|
+| flex         | display         |
+| direction    | flex-direction  |
+| wrap         | flex-wrap       |
+| justify      | justify-content |
+| align        | align-items     |
+| alignContent | align-content   |
 
-## `step2` imports module
 
-```ts
-import { Iwe7FlexBoxModule } from 'iwe7-flex';
+flex-item
 
-@NgModule({
-  imports:[Iwe7FlexBoxModule]
-})
-```
+| inputs | 说明          |
+|--------|-------------|
+| order  | order       |
+| grow   | flex-grow   |
+| shrink | flex-shrink |
+| basis  | flex-basis  |
+| self   | align-self  |
 
-## `step3`: use
-
-```html
-<flex>
-  <flex-item><flex-item>
-</flex>
-```
-
-## `docs`
-
-* `flex docs`
-
-```ts
-@Input() flex: string;
-@Input() direction: string;
-@Input() wrap: string;
-@Input() justify: string;
-@Input() align: string;
-@Input() alignContent: string;
-```
-
-* `flex-item docs`
-
-```ts
-@Input() order: number;
-@Input() grow: number;
-@Input() shrink: number;
-@Input() basis: string;
-@Input() self: AmFlexItemSelf;
-```

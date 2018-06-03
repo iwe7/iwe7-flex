@@ -33,16 +33,8 @@ export class AmFlexboxItemInputsDefault implements AmFlexboxItemInputs {
   basis: string = "auto";
   self: AmFlexItemSelf = "auto";
 }
-@Component({
-  selector: "iwe7-flex-item,am-flex-item,flex-item",
-  template: `<ng-content></ng-content>`,
-  providers: [Iwe7IcssService]
-})
-@Directive({
-  selector: "[iwe7FlexItem],[amFlexItem],[flexItem]",
-  providers: [Iwe7IcssService]
-})
-export class AmFlexboxItem extends Iwe7BaseDirective {
+
+export class AmFlexItemRef extends Iwe7BaseDirective {
   @Input() order: number;
   @Input() grow: number;
   @Input() shrink: number;
@@ -56,5 +48,25 @@ export class AmFlexboxItem extends Iwe7BaseDirective {
     super(injector, "");
     Object.assign(this, this._default);
     this.setStyleInputs(["order", "flex", "self"]);
+  }
+}
+
+@Component({
+  selector: "iwe7-flex-item,am-flex-item,flex-item",
+  template: `<ng-content></ng-content>`,
+  providers: [Iwe7IcssService]
+})
+export class Iwe7FlexItemComponent extends AmFlexItemRef {
+  constructor(injector: Injector, _default: AmFlexboxItemInputsDefault) {
+    super(injector, _default);
+  }
+}
+@Directive({
+  selector: "[iwe7FlexItem],[amFlexItem],[flexItem]",
+  providers: [Iwe7IcssService]
+})
+export class Iwe7FlexItemDirective extends AmFlexItemRef {
+  constructor(injector: Injector, _default: AmFlexboxItemInputsDefault) {
+    super(injector, _default);
   }
 }

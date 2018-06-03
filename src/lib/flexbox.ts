@@ -61,24 +61,32 @@ export class AmFlexInputsDefault implements AmFlexInputs {
   alignContent: AmFlexAlignContentType = "stretch";
 }
 
-@Component({
-  selector: "iwe7-flex,am-flex,flex",
-  template: `<ng-content></ng-content>`,
-  styleUrls: ["./flexbox.scss"],
-  providers: [Iwe7IcssService],
-  encapsulation: ViewEncapsulation.None
-})
-@Directive({
-  selector: "[iwe7Flex],[amFlex],[flex]",
-  providers: [Iwe7IcssService]
-})
-export class AmFlexbox extends Iwe7BaseComponent {
-  @Input() flex: string;
-  @Input() direction: string;
-  @Input() wrap: string;
-  @Input() justify: string;
-  @Input() align: string;
-  @Input() alignContent: string;
+export class AmFlexboxRef extends Iwe7BaseComponent {
+  @Input() flex: AmFlexType;
+  @Input() direction: AmFlexDirectionType;
+  @Input() wrap: AmFlexWrapType;
+  @Input() justify: AmFlexJustify;
+  @Input() align: AmFlexAlignType;
+  @Input() alignContent: AmFlexAlignContentType;
+
+  @Input()
+  set left(val: any) {}
+
+  @Input()
+  set center(val: any) {}
+
+  @Input()
+  set right(val: any) {}
+
+  @Input()
+  set top(val: any) {}
+
+  @Input()
+  set bottom(val: any) {}
+
+  @Input()
+  set middle(val: any) {}
+
   constructor(injector: Injector, public _default: AmFlexInputsDefault) {
     super(injector, "");
     Object.assign(this, this._default);
@@ -90,5 +98,28 @@ export class AmFlexbox extends Iwe7BaseComponent {
       "align",
       "alignContent"
     ]);
+  }
+}
+
+@Component({
+  selector: "iwe7-flex,am-flex,flex",
+  template: `<ng-content></ng-content>`,
+  styleUrls: ["./flexbox.scss"],
+  providers: [Iwe7IcssService],
+  encapsulation: ViewEncapsulation.None
+})
+export class AmFlexComponent extends AmFlexboxRef {
+  constructor(injector: Injector, _default: AmFlexInputsDefault) {
+    super(injector, _default);
+  }
+}
+
+@Directive({
+  selector: "[iwe7Flex],[amFlex],[flex]",
+  providers: [Iwe7IcssService]
+})
+export class AmFlexDirective extends AmFlexboxRef {
+  constructor(injector: Injector, _default: AmFlexInputsDefault) {
+    super(injector, _default);
   }
 }
