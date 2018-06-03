@@ -27,5 +27,5 @@
 |-----------|----------|-----------------------------------|
 | iwe7-flex | flex布局组件 | https://github.com/iwe7/iwe7-flex |
 | iwe7-map  | 百度地图组件   | https://github.com/iwe7/iwe7-map  |
-| iwe7-im   | IM组件     | https://github.com/iwe7/iwe7-flex |
+| iwe7-im   | IM组件     | https://github.com/iwe7/iwe7-im |
 
